@@ -1,17 +1,23 @@
+#Task 1
+
+name = input("Enter your name:")
+print("Enter your age:")
+age = int(input())
 
 
+def ages(name: str, age:int )->str:
+    if name.isdigit():
+        raise TypeError("Invalid type for name ")
 
-
-def ages():
-    name = input("Enter your name:")
-    print("Enter your age:")
-    age = int(input())
+    if not isinstance(age , int):
+       raise TypeError("Invalid type for age")
 
     if age < 12:
-        print(name + " is Child")
+        return "child"
     elif age >= 12 and age <= 18:
-        print(name +" is Teenager")
+        return "teenager"
     else:
-        print(name +" is Adult")
+        return "adult"
 
-ages()
+
+result = ages(name, age)
